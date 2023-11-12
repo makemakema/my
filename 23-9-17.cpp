@@ -1176,20 +1176,59 @@
 //	return 0;
 //}
 
-void Fibonacci_sequence(int x)
+//int Fibonacci_sequence(int x)
+//{
+//	int a = 1;
+//	int b = 1;
+//	if(x<3&&x>0)
+//	{
+//		return a;
+//	}
+//	else if(x>=3)
+//	{
+//		int sum = 0;
+//		int i = 0;
+//		for(i=x;i>0;i--)
+//		{
+//			sum =Fibonacci_sequence(x-1)+ Fibonacci_sequence(x-2);
+//			i--;
+//		}
+//		return sum;
+//	 } 
+//	
+//}
+//int Fibonacci_sequence(int n)
+//{
+//	if(n<=2)
+//	{
+//		return 1;
+//	}
+//	else
+//		return Fibonacci_sequence(n-1) + Fibonacci_sequence(n-2);
+//}
+
+int Fibonacci_sequence(int n)
 {
-	int a = 1;
-	int b = 1;
-	if(x<2)
+	int result;
+	int pre_result;
+	int next_older_result;
+	result = pre_result = 1;
+	while(n>2)
 	{
-		printf("%d",a);
+		n -=1;
+		next_older_result = pre_result;
+		pre_result = result;
+		result = pre_result + next_older_result;
 	}
-	
+	return result;
 }
 int main()
 {
 	int n = 0;
 	scanf("%d",&n);
-	Fibonacci_sequence(n);
+	int num = Fibonacci_sequence(n);
+	printf("%d",num);
 	return 0;
  } 
+
+
